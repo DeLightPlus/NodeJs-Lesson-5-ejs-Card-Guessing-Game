@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <header>
+        <h3>🧩<u> <strong>______ Card Guessing Game ______</strong> </u>🧩</h3>        
+    </header>    
+
+    <main>
+        <div class="container">
+            <h3>🧩<u> <strong>______ Memory Game ______</strong> </u>🧩</h3>
+            
+            <div class="memory_game">
+                <% if (random_cards && random_cards.length) 
+                { %>
+                    <% for (let i = 0; i < random_cards.length; i++) { %>
+                        <div class="card" data-cards="<%= random_cards[i] %>"><%= random_cards[i] %></div>
+                    <% } %>
+                <% } else { %>
+                    <p>No cards available. Please refresh to start a new game.</p>
+                <% } %>
+            </div>   
+            
+            <button class="button" onclick="window.location.reload()"><b>Restart Game</b></button>
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+   <script type="application/json" data-cards='<%= JSON.stringify(random_cards) %>'></script>
+    <script src="../app.js"></script>
+</body>
+</html>
