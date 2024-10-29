@@ -8,21 +8,21 @@ const win = [
     '', '', '', '', '', ''
     ];    
 
-var random_cards = cards.sort(() => (Math.random() > 0.5) ? 2 : -1);
-console.log(random_cards);
+// var random_cards = cards.sort(() => (Math.random() > 0.5) ? 2 : -1);
+// console.log(random_cards);
 
-function Reshuffle(random_cards) {
-    for (let i = random_cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [random_cards[i], random_cards[j]] = [random_cards[j], random_cards[i]]; // Swap elements
-    }
-    return random_cards;
-}
+// function Reshuffle(random_cards) {
+//     for (let i = random_cards.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [random_cards[i], random_cards[j]] = [random_cards[j], random_cards[i]]; // Swap elements
+//     }
+//     return random_cards;
+// }
 
-random_cards = Reshuffle(random_cards);
-console.log(random_cards);
-random_cards = Reshuffle(random_cards);
-console.log(random_cards);
+// random_cards = Reshuffle(random_cards);
+// console.log(random_cards);
+// random_cards = Reshuffle(random_cards);
+// console.log(random_cards);
 
 document.querySelectorAll('.card').forEach(card => {
     card.onclick = function() {
